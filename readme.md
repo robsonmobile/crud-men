@@ -31,7 +31,7 @@
     ```
     npm install express --save
     ```
-    O --save, vai colocar o express como uma dependencia do seu projeto. E isso pode ser visto no seu `package.json`
+    O `--save` vai colocar o express como uma dependencia do seu projeto. E isso pode ser visto no seu `package.json`
 
   * Agora vamos configurar o servidor. Se voce não criou, crie o arquivo `server.js` dentro da pasta do seu projeto
     ```javascript
@@ -71,7 +71,7 @@
     Dessa forma o servidor ja vai estar rodando e o resultado pode ser visto em [localhost:3000/api](http://localhost:3000/api)
 
 4. **Pacotes que podem auxiliar**
-  * *Nodemon*
+  * *Nodemon*:
     Toda vez que modificamos nosso código fonte, precisamos reiniciar o servidor para que as alterações tenham efeito.
     O *Nodemon* faz essa tarefa pra gente, monitorando qualquer mudança no codigo fonte e reiniciando o servidor automaticamente.
     Para instalar basta:
@@ -94,7 +94,7 @@
     npm run dev
     ```
 
+  * *Node Inspector*:
 
-  * *Node Inspector*
 
-  * *Postman*
+  * *Postman*:

@@ -10,7 +10,7 @@
   * Instale e rode o MongoDB. [Link](https://www.mongodb.com/)
 
 2. Estrutura da aplicação
-  * ```
+  ```
   projeto/
     | models/           //guarda nossos modelos
     |    | post.js
@@ -67,3 +67,5 @@
   ```
   node server.js
   ```
+  No meu caso o *OUTPUT* foi `Server Iniciado na porta 3000`
+  Dessa forma o servidor ja vai estar rodando e o resultado pode ser visto em [localhost:3000/api](http://localhost:3000/api)

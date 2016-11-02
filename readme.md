@@ -139,3 +139,28 @@
   http://localhost:3000/api e voce verá o resultado de várias formas.
 
 ## CRUD
+1. **Conectando ao MongoDB**
+  * Levando em consideração que seu MongoDB já está instalado e rodando, precisamos fazer 3 passos para nos conectarmos
+  1. Instalar o pacote Mongoose
+  2. Carregar o pacote Mongoose
+  3. conectarmos ao Mongo através da nossa *string* de conexão
+
+  Instale o Mongoose com o comando:
+  ```
+  npm install mongoose --save
+  ```
+  E vamos carregá-lo agora no nosso `server.js`
+  ```javascript
+  //Carrega os pacotes necessários
+  var express = require('express');
+  var mongose = require('mongoose');
+  ```
+  E fazemos a conexão com o MongoDB
+  ```javascript
+  //Carrega os pacotes necessários
+  var express = require('express');
+  var mongoose = require('mongoose');
+
+  //Conecta ao MongoDB postapp
+  mongoose.connect('mongodb://localhost:27017/postapp');
+  ```

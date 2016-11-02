@@ -68,17 +68,25 @@
     node server.js
     ```
     No meu caso o *OUTPUT* foi `Server Iniciado na porta 3000`.
+
     Dessa forma o servidor ja vai estar rodando e o resultado pode ser visto em [localhost:3000/api](http://localhost:3000/api)
 
 4. **Pacotes que podem auxiliar**
   * *Nodemon*:
+
     Toda vez que modificamos nosso código fonte, precisamos reiniciar o servidor para que as alterações tenham efeito.
+
     O *Nodemon* faz essa tarefa pra gente, monitorando qualquer mudança no codigo fonte e reiniciando o servidor automaticamente.
     Para instalar basta:
     ```
     npm install -g nodemon
     ```
     Utilizamos o `-g` aqui para o acesso ao pacote global.
+    Ou
+    ```
+    npm install nodem --save-dev
+    ```
+    Utilizamo o `--save-dev` para armazenar o pacote como uma dependencia para o desenvolvimento
       > Perceba que no nosso `package.json` existe um atributo chamado `scripts`.
       > Estes scripts pode ser 'rodados' pelo comando `npm run [nome do script]`
 
@@ -95,6 +103,28 @@
     ```
 
   * *Node Inspector*:
+
+  É uma *debugger interface* para aplicações Node baseadas no [Blink Dev Tools](https://chromium.googlesource.com/chromium/blink) e
+  funciona pratimaente da mesma forma que o *Chrome Dev Tools*.
+
+  Da mesma forma que instalamos o *Nodemon*, instalaremos o *Node Inspector*
+  ```
+  npm install -g node-inspector
+  ```
+  para instalar globalmente, ou
+  ```
+  npm install node-inspector --save-dev
+  ```
+  para instalar e salvar como um dependencia de desenvolvimento
+    > Isso é muito bom quando o projeto é compartilhado
+
+  Uma vez instalado, o comando para iniciar é:
+  ```
+  node-debug server.js
+  ```
+  Ou se preferir, crie um script `debug` para rodar com o `npm run debug`
+
+  Esse comando iniciará o pacote e seu navegador padrão
 
 
   * *Postman*:

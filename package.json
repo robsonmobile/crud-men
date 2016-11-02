@@ -12,5 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "node-inspector": "^0.12.8",
+    "nodemon": "^1.11.0"
   }
 }

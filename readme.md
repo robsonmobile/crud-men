@@ -1,10 +1,10 @@
 # CRUD-MEN : MongoDB + ExpressJs + NodeJs
 
-### Projeto
+## Projeto
 
 ...
 
-### Iniciando
+## Iniciando
 1. **Instalando os programas necessários**
   * Instale a ultima versão do NodeJs e do NPM (Gerenciados de pacotes do Node). [Link](https://nodejs.org/en/)
   * Instale e rode o MongoDB. [Link](https://www.mongodb.com/)
@@ -128,3 +128,14 @@
 
 
   * *Postman*:
+
+  É um cliente HTTP que auxilia (e muito) a realização de *requests* simples à complexas
+
+  É um podereso complemento para a construção de webapps em qualquer linguagem e ambiente.
+
+  Você pode conhecer um pouco mais dele aqui> [Postman](http://www.getpostman.com/)
+
+  Faça o download, e o instale. Após isso voce pode testar nossa API enviando uma requisição do tipo GET ao endereço
+  http://localhost:3000/api e voce verá o resultado de várias formas.
+
+## CRUD

@@ -143,7 +143,7 @@
   * Levando em consideração que seu MongoDB já está instalado e rodando, precisamos fazer 3 passos para nos conectarmos
   1. Instalar o pacote Mongoose
   2. Carregar o pacote Mongoose
-  3. conectarmos ao Mongo através da nossa *string* de conexão
+  3. Conectarmos ao Mongo através da nossa *string* de conexão
 
   Instale o Mongoose com o comando:
   ```
@@ -163,4 +163,47 @@
 
   //Conecta ao MongoDB postapp
   mongoose.connect('mongodb://localhost:27017/postapp');
+  ```
+  Depois disso, execute `npm run dev` para iniciar o seu servidor. Se tudo deu certo, o servidor iniciará sem erros.
+    > Caso encontre algum erro relacionado ao mongodb, verifique se os executáveis dele foram adicionados no PATH das suas variaveis de ambiente.
+    > O mongodb, por padrão, procura por um diretório C:\\data\\db então crie este diretório para não encontrar problemas
+    > Não se esqueça de verificar se o mongodb está rodando, caso não, use `mongod` no terminal
+
+2. **Criando o primeiro Model - POST**
+  * Crie o arquivo `post.js` na pasta models, como mostramos na estrutura do projeto:
+  ```
+  projeto/
+    | models/           //guarda nossos modelos
+    |    | post.js
+    ...
+  ```
+
+  E agora vamos adicionar algumas linhas.
+  * Carregamos o mongoose
+  ```javascript
+  //Carrega os pacotes necessários
+  var mongoose = require('mongoose');
+  ```
+  * Criamos o nosso mongoose schema que mapeará uma coleção do mongodb (no mongodb tabelas são chamadas de collections)
+  ```javascript
+  // Define no Post Schema
+  var PostSchema   = new mongoose.Schema({
+    titulo: String,
+    desc: String,
+    likes: Number,
+    ativo: Boolean
+  });
+  ```
+  * Exportamos nosso model pra ser usado na nossa app
+  ```javascript
+  // Exporta nosso model
+  module.exports = mongoose.model('Post', PostSchema);
+  ```
+
+  Agora só precisamos carregar nosso novo Post model no nosso `server.js`
+  ```javascript
+  //Carrega os pacotes necessários
+  var express = require('express');
+  var mongoose = require('mongoose');
+  var post = require('./models/post');
   ```

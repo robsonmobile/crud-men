@@ -1,6 +1,7 @@
 //Carrega os pacotes necessários
 var express = require('express');
 var mongoose = require('mongoose');
+var post = require('./models/post');
 
 //Conecta ao MongoDB postapp
 mongoose.connect('mongodb://localhost:27017/postapp');

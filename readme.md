@@ -207,3 +207,64 @@
   var mongoose = require('mongoose');
   var post = require('./models/post');
   ```
+
+3. **Obtendo dados do form via POST e PUT**
+  * Vamos precisar de outro pacote para nos auxiliar nessa tarefa:
+  ```
+  npm install body-parser --save
+  ```
+  E após a instalação carregamos ele no nosso `server.js`
+  ```javascript
+  //Carrega os pacotes necessários
+  var express = require('express');
+  var mongoose = require('mongoose');
+  var bodyParser = require('body-parser');
+  var post = require('./models/post');
+  ```
+  E finalmente precisamos utilizar ele com nosso express
+  ```javascript
+  //Cria o app express
+  var app = express();
+
+  //Usar body-parser na nossa aplicação
+  app.use(bodyParser.urlencoded(
+    extended: true
+  ));
+  ```
+  Agora vamos adcionar estas linhas ao nosso `server.js`
+  ```javascript
+  //Inicio da rota para testes
+  router.get('/', (req, res) => {
+    res.json({
+      message: 'App Rodando'
+    });
+  });
+
+  //Cria nova rota com o prefixo posts
+  var postRoute = router.route('/posts');
+
+  //Cria o endpoint /api/posts para as requisiçoes POST
+  postRoute.post( (req, res) => {
+      //Cria nova instancia do model Post
+      var post = new Post();
+
+      //Seta os atributos com os valores vindo do POST
+      post.titulo = req.body.titulo;
+      post.desc = req.body.desc;
+      post.likes = req.body.likes;
+      post.ativo = req.body.ativo;
+
+      //Salva no MongoDB
+      post.save( (err) => {
+        if (err) {
+          res.send(err);
+        }
+
+        res.json({
+          message: 'Post adicionado com sucesso',
+          data: post
+        });
+      });
+  });
+  ```
+  
